@@ -1,0 +1,8 @@
+# Format: [type] [name] [value]
+# Each entry should start with 0 spaces
+# Entries are seperated by a ";". The last line should not have a seperator
+# Supported types: bool, string, int
+
+bool IsTrue false;
+string Name martin;
+int number 42
