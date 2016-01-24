@@ -3,6 +3,12 @@
 # Entries are seperated by a ";". The last line should not have a seperator
 # Supported types: bool, string, int
 
-bool IsTrue false;
-string Name martin;
-int number 42
+string UserToken notoken;
+int UpdateFrequency 60;
+int NotificationScreenTime 60;
+bool OfflineMode False;
+bool StartWithWindows False;
+bool StartMinimized False;
+bool PlaySound True;
+int DisplayMonitor 0;
+bool OpenStreamWithScript False

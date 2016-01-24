@@ -1,0 +1,28 @@
+class ConfigMgnr : CustomConfigProject.Base.SettingsManager
+{
+private static ConfigMgnr instance = new ConfigMgnr();
+public static ConfigMgnr I { get { return instance; } }
+public override string ConfigPath { get { return null; }}
+
+private ConfigMgnr() : base() {
+DefaultCollection["UserToken"] = "notoken";
+DefaultCollection["UpdateFrequency"] = "60";
+DefaultCollection["NotificationScreenTime"] = "60";
+DefaultCollection["OfflineMode"] = "False";
+DefaultCollection["StartWithWindows"] = "False";
+DefaultCollection["StartMinimized"] = "False";
+DefaultCollection["PlaySound"] = "True";
+DefaultCollection["DisplayMonitor"] = "0";
+DefaultCollection["OpenStreamWithScript"] = "False";
+RunStartup();
+}
+public string UserToken { get { return Get("UserToken"); } set { Set("UserToken", value); } }
+public int UpdateFrequency  { get { return int.Parse(Get("UpdateFrequency")); } set { Set("UpdateFrequency", value); } }
+public int NotificationScreenTime  { get { return int.Parse(Get("NotificationScreenTime")); } set { Set("NotificationScreenTime", value); } }
+public bool OfflineMode { get { return bool.Parse(Get("OfflineMode")); } set { Set("OfflineMode", value); } }
+public bool StartWithWindows { get { return bool.Parse(Get("StartWithWindows")); } set { Set("StartWithWindows", value); } }
+public bool StartMinimized { get { return bool.Parse(Get("StartMinimized")); } set { Set("StartMinimized", value); } }
+public bool PlaySound { get { return bool.Parse(Get("PlaySound")); } set { Set("PlaySound", value); } }
+public int DisplayMonitor  { get { return int.Parse(Get("DisplayMonitor")); } set { Set("DisplayMonitor", value); } }
+public bool OpenStreamWithScript { get { return bool.Parse(Get("OpenStreamWithScript")); } set { Set("OpenStreamWithScript", value); } }
+}

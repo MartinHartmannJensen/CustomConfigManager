@@ -75,7 +75,7 @@ namespace CustomConfigProject.Base
         {
             foreach (string item in File.ReadLines(ConfigPath))
             {
-                string[] key_value = Regex.Split(item, @"\s+=\s+");
+                string[] key_value = Regex.Split(item, @"\s+=\s+|=\s+|\s+=|=");
                 if (DefaultCollection.ContainsKey(key_value[0]))
                     PropertiesCollection[key_value[0]] = key_value[1];
             }
